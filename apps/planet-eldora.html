@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja" data-l="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>惑星エルドラ ― 生態系戦略シミュレーション | R-each</title>
+<meta name="description" content="小さな惑星に広がる草原。生物を配置し、食物連鎖と環境のバランスを取りながら生態系を安定させるリアルタイム・シミュレーション『惑星エルドラ』公式ページ。App Storeで配信中。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="惑星エルドラ ― 生態系戦略シミュレーション | R-each">
+<meta property="og:description" content="生物を配置し、食物連鎖と環境のバランスを取りながら、生態系を安定させよう。App Storeで配信中。">
+<meta property="og:url" content="https://r-each0801.github.io/web/apps/planet-eldora.html">
+<meta property="og:image" content="https://r-each0801.github.io/web/assets/img/eldora/art_bolg.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../assets/img/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="p-eldora">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand-logo" href="../index.html">R-each<em><i></i><i></i><i></i><i></i></em></a>
+    <nav class="site-nav">
+      <a href="../index.html#works"><span class="ja">作品</span><span class="en">Works</span></a>
+      <a href="../index.html#about"><span class="ja">R-eachについて</span><span class="en">About</span></a>
+      <a href="../support.html"><span class="ja">サポート</span><span class="en">Support</span></a>
+      <a href="../privacy.html"><span class="ja">プライバシー</span><span class="en">Privacy</span></a>
+      <a href="../terms.html"><span class="ja">利用規約</span><span class="en">Terms</span></a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="ja">JA</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button class="nav-burger" type="button" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="app-hero">
+    <div class="app-hero-bg tint" style="background:radial-gradient(1000px 620px at 80% -10%, rgba(212,166,86,.16), transparent 62%), radial-gradient(700px 480px at 5% 105%, rgba(212,166,86,.08), transparent 60%), var(--bg);"></div>
+    <div class="wrap app-hero-inner">
+      <div class="app-icon-lg"><img src="../assets/img/eldora/icon.webp" alt="惑星エルドラ アイコン"></div>
+      <img class="app-logo-img" src="../assets/img/eldora/logo.webp" alt="惑星エルドラ / Planet Eldra" style="max-width:300px;">
+      <p class="app-tagline">
+        <span class="ja">小さな惑星に、生命の環を。</span>
+        <span class="en">A ring of life on a small planet.</span>
+      </p>
+      <p class="app-sub">
+        <span class="ja">小さな惑星に広がる草原。生物を配置し、食物連鎖と環境のバランスを取りながら、生態系を安定させよう。捕食も繁殖も分解も、すべてがリアルタイムで動き続ける生態系戦略シミュレーション。</span>
+        <span class="en">A small planet of sprawling grasslands. Deploy creatures, balance the food chain, and stabilize the ecosystem. Predation, breeding, decomposition — everything unfolds in real time.</span>
+      </p>
+      <div class="chips">
+        <span class="tag status-live"><span class="ja">配信中 v1.4.1</span><span class="en">Available v1.4.1</span></span>
+        <span class="tag">iOS 15.0+</span>
+        <span class="tag"><span class="ja">基本プレイ無料</span><span class="en">Free to play</span></span>
+        <span class="tag"><span class="ja">日本語 / 英語</span><span class="en">JA / EN</span></span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://apps.apple.com/jp/app/%E6%83%91%E6%98%9F%E3%82%A8%E3%83%AB%E3%83%89%E3%83%A9/id6760546282" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.7 19.5c-.9 1.3-1.8 2.6-3.2 2.6-1.4 0-1.9-.8-3.5-.8s-2.1.8-3.4.9c-1.4 0-2.4-1.4-3.3-2.7C3.4 16.8 2 11.9 3.9 8.7c.9-1.6 2.6-2.6 4.4-2.6 1.4 0 2.7.9 3.5.9.8 0 2.4-1.1 4-1 .7 0 2.7.3 4 2.1-.1.1-2.4 1.4-2.3 4.1 0 3.3 2.9 4.4 2.9 4.4-.1.1-.5 1.6-1.7 2.9zM13 3.5c.7-.9 1.9-1.5 2.9-1.5.1 1.1-.3 2.3-1 3.1-.7.9-1.8 1.6-2.9 1.5-.2-1.1.4-2.3 1-3.1z"/></svg>
+          <span class="ja">App Storeで入手</span><span class="en">Get on App Store</span>
+        </a>
+        <a class="btn btn-ghost" href="#creatures"><span class="ja">生物図鑑を見る</span><span class="en">Meet the Creatures</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <p class="eyebrow rv">Gameplay</p>
+      <h2 class="section-title rv">
+        <span class="ja">配置したら、あとは祈るな。調整しろ。</span>
+        <span class="en">Deploy, then don't pray — adjust.</span>
+      </h2>
+      <p class="section-lead rv">
+        <span class="ja">LP(ライフポイント)を消費して生物を投入し、遺伝子操作でパラメータを調整。ステージごとのクリア条件を、制限時間内に達成しよう。</span>
+        <span class="en">Spend LP to deploy creatures and tune their genes. Meet each stage's objectives before time runs out.</span>
+      </p>
+      <div class="feature-grid">
+        <div class="feature-card rv">
+          <p class="f-num">01</p>
+          <h3><span class="ja">六角形の惑星</span><span class="en">A hexagonal planet</span></h3>
+          <p><span class="ja">六角形のマスで構成された惑星。セルごとに植生・土壌が変化し、生物たちの生息環境を左右します。</span><span class="en">A planet built from hexagonal cells. Vegetation and soil shift in each cell, shaping the habitat for every creature.</span></p>
+        </div>
+        <div class="feature-card rv">
+          <p class="f-num">02</p>
+          <h3><span class="ja">遺伝子操作</span><span class="en">Gene editing</span></h3>
+          <p><span class="ja">生物の寿命・繁殖力・耐性などを遺伝子レベルで調整。戦略的な生態系設計が可能です。</span><span class="en">Adjust lifespan, fertility, and resistance at the genetic level. Design your ecosystem strategically.</span></p>
+        </div>
+        <div class="feature-card rv">
+          <p class="f-num">03</p>
+          <h3><span class="ja">リアルタイム・シミュレーション</span><span class="en">Real-time simulation</span></h3>
+          <p><span class="ja">捕食・繁殖・分解・天候変化がリアルタイムで進行。生態系は常に変化し続けます。</span><span class="en">Predation, breeding, decomposition, and weather unfold in real time. The ecosystem never stops changing.</span></p>
+        </div>
+        <div class="feature-card rv">
+          <p class="f-num">04</p>
+          <h3><span class="ja">多彩なステージ</span><span class="en">Varied stages</span></h3>
+          <p><span class="ja">入門から超高難度まで段階的に解放。ステージごとに異なるクリア条件と環境が待ち受けます。</span><span class="en">Progressively unlocked from beginner to extreme. Each stage presents unique conditions and environments.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCREENSHOTS ===== -->
+  <section class="section alt">
+    <div class="wrap">
+      <p class="eyebrow rv">Screenshots</p>
+      <h2 class="section-title rv">
+        <span class="ja">手のひらの上の、まわる生態系。</span>
+        <span class="en">A living ecosystem in your palm.</span>
+      </h2>
+      <div class="shot-scroll rv">
+        <figure class="shot"><img src="../assets/img/eldora/screen_1.webp" alt="惑星マップとUI全体" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/eldora/screen_2.webp" alt="生態系シミュレーション中の画面" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/eldora/screen_3.webp" alt="生物管理UI" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/eldora/screen_4.webp" alt="詳細ステータス表示" loading="lazy"></figure>
+        <figure class="shot"><img src="../assets/img/eldora/screen_5.webp" alt="リザルト画面" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CREATURES ===== -->
+  <section class="section" id="creatures">
+    <div class="wrap">
+      <p class="eyebrow rv">Creatures</p>
+      <h2 class="section-title rv">
+        <span class="ja">10の生物、10の役割。</span>
+        <span class="en">Ten creatures, ten roles.</span>
+      </h2>
+      <p class="section-lead rv">
+        <span class="ja">草食獣、捕食者、分解者、そして守護者。一種でも欠ければ、環はまわらない。</span>
+        <span class="en">Grazers, predators, decomposers, guardians. Lose even one, and the ring stops turning.</span>
+      </p>
+      <div class="cell-grid">
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_01.webp" alt="ボルグ" loading="lazy">
+          <p class="c-name"><span class="ja">ボルグ</span><span class="en">Bolg</span></p>
+          <p class="c-sub">Bolg</p>
+          <p class="c-role"><span class="ja">大型草食獣</span><span class="en">Large grazer</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_02.webp" alt="ルィッカ" loading="lazy">
+          <p class="c-name"><span class="ja">ルィッカ</span><span class="en">Ruikka</span></p>
+          <p class="c-sub">Ruikka</p>
+          <p class="c-role"><span class="ja">小型草食獣</span><span class="en">Small grazer</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_03.webp" alt="ズーラ" loading="lazy">
+          <p class="c-name"><span class="ja">ズーラ</span><span class="en">Zura</span></p>
+          <p class="c-sub">Zura</p>
+          <p class="c-role"><span class="ja">群れの捕食者</span><span class="en">Pack hunter</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_04.webp" alt="ジパンガ" loading="lazy">
+          <p class="c-name"><span class="ja">ジパンガ</span><span class="en">Jipanga</span></p>
+          <p class="c-sub">Jipanga</p>
+          <p class="c-role"><span class="ja">頂点捕食者</span><span class="en">Apex predator</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_05.webp" alt="ゲヒナ" loading="lazy">
+          <p class="c-name"><span class="ja">ゲヒナ</span><span class="en">Gehina</span></p>
+          <p class="c-sub">Gehina</p>
+          <p class="c-role"><span class="ja">徘徊分解者</span><span class="en">Roaming decomposer</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_06.webp" alt="カルセポネ" loading="lazy">
+          <p class="c-name"><span class="ja">カルセポネ</span><span class="en">Karucepone</span></p>
+          <p class="c-sub">Karucepone</p>
+          <p class="c-role"><span class="ja">菌糸分解者</span><span class="en">Mycelial decomposer</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_07.webp" alt="ヘリオル" loading="lazy">
+          <p class="c-name"><span class="ja">ヘリオル</span><span class="en">Heliol</span></p>
+          <p class="c-sub">Heliol</p>
+          <p class="c-role"><span class="ja">光合成の守護者</span><span class="en">Photosynthetic guardian</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_08.webp" alt="ゼーガン" loading="lazy">
+          <p class="c-name"><span class="ja">ゼーガン</span><span class="en">Zeagan</span></p>
+          <p class="c-sub">Zeagan</p>
+          <p class="c-role"><span class="ja">超大型の土壌食</span><span class="en">Giant soil-eater</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_09.webp" alt="ハシュカ" loading="lazy">
+          <p class="c-name"><span class="ja">ハシュカ</span><span class="en">Hashka</span></p>
+          <p class="c-sub">Hashka</p>
+          <p class="c-role"><span class="ja">繭落としの殻獣</span><span class="en">Cocoon-dropping shellbeast</span></p>
+        </div>
+        <div class="cell rv">
+          <img src="../assets/img/eldora/creature_10.webp" alt="ドーザ" loading="lazy">
+          <p class="c-name"><span class="ja">ドーザ</span><span class="en">Dorza</span></p>
+          <p class="c-sub">Dorza</p>
+          <p class="c-role"><span class="ja">鋤鼻の掘り獣</span><span class="en">Plow-nosed digger</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ART ===== -->
+  <section class="section alt">
+    <div class="wrap">
+      <p class="eyebrow rv">Concept Art</p>
+      <h2 class="section-title rv">
+        <span class="ja">エルドラの風景。</span>
+        <span class="en">Scenes from Eldra.</span>
+      </h2>
+      <div class="shot-row wide">
+        <figure class="shot rv"><img src="../assets/img/eldora/art_bolg.webp" alt="ボルグの群れのコンセプトアート" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/eldora/art_zura.webp" alt="ズーラのコンセプトアート" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/eldora/art_heliol.webp" alt="ヘリオルのコンセプトアート" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPEC ===== -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow rv">Specs</p>
+      <h2 class="section-title rv"><span class="ja">製品情報</span><span class="en">Product Info</span></h2>
+      <table class="spec-table rv">
+        <tr><th><span class="ja">タイトル</span><span class="en">Title</span></th><td><span class="ja">惑星エルドラ</span><span class="en">Planet Eldra</span></td></tr>
+        <tr><th><span class="ja">ジャンル</span><span class="en">Genre</span></th><td><span class="ja">生態系戦略シミュレーション</span><span class="en">Ecosystem strategy simulation</span></td></tr>
+        <tr><th><span class="ja">対応環境</span><span class="en">Requirements</span></th><td>iOS 15.0+ (iPhone / iPad)</td></tr>
+        <tr><th><span class="ja">価格</span><span class="en">Price</span></th><td><span class="ja">基本プレイ無料(アプリ内課金あり)</span><span class="en">Free to play (with in-app purchases)</span></td></tr>
+        <tr><th><span class="ja">対応言語</span><span class="en">Languages</span></th><td><span class="ja">日本語 / 英語</span><span class="en">Japanese / English</span></td></tr>
+        <tr><th><span class="ja">バージョン</span><span class="en">Version</span></th><td>v1.4.1</td></tr>
+        <tr><th><span class="ja">開発</span><span class="en">Developer</span></th><td>R-each</td></tr>
+        <tr><th>App Store</th><td><a href="https://apps.apple.com/jp/app/%E6%83%91%E6%98%9F%E3%82%A8%E3%83%AB%E3%83%89%E3%83%A9/id6760546282" target="_blank" rel="noopener" style="color:var(--c-eldora);">apps.apple.com/jp/app/惑星エルドラ</a></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2 class="section-title rv">
+        <span class="ja">あなたの惑星を、まわしはじめよう。</span>
+        <span class="en">Set your planet in motion.</span>
+      </h2>
+      <p class="rv">
+        <span class="ja">惑星エルドラはApp Storeで配信中。基本プレイ無料です。</span>
+        <span class="en">Planet Eldra is available now on the App Store — free to play.</span>
+      </p>
+      <div class="hero-cta rv">
+        <a class="btn btn-primary" href="https://apps.apple.com/jp/app/%E6%83%91%E6%98%9F%E3%82%A8%E3%83%AB%E3%83%89%E3%83%A9/id6760546282" target="_blank" rel="noopener"><span class="ja">App Storeで入手</span><span class="en">Get on App Store</span></a>
+        <a class="btn btn-ghost" href="../support.html#eldora"><span class="ja">サポート</span><span class="en">Support</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand-logo" href="../index.html">R-each<em><i></i><i></i><i></i><i></i></em></a>
+        <p>
+          <span class="ja">ゲームからブラウザ、学習アプリまでを手掛ける個人開発スタジオ。</span>
+          <span class="en">A one-person studio crafting games, a browser, and a learning app.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Works</h4>
+        <ul>
+          <li><a href="descent-of-yomi.html">Descent of Yomi</a></li>
+          <li><a href="planet-eldora.html"><span class="ja">惑星エルドラ</span><span class="en">Planet Eldra</span></a></li>
+          <li><a href="halfmoon-browser.html">HalfMoon Browser</a></li>
+          <li><a href="dake.html">DAKE!</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="../support.html"><span class="ja">サポート</span><span class="en">Support</span></a></li>
+          <li><a href="../privacy.html"><span class="ja">プライバシーポリシー</span><span class="en">Privacy Policy</span></a></li>
+          <li><a href="../terms.html"><span class="ja">利用規約</span><span class="en">Terms of Service</span></a></li>
+          <li><a href="mailto:reach.app.support@gmail.com"><span class="ja">お問い合わせ</span><span class="en">Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© 2026 R-each. All rights reserved.</small>
+      <small>reach.app.support@gmail.com</small>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
