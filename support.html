@@ -52,38 +52,104 @@
   <section class="section" style="padding-top:70px;">
     <div class="wrap">
 
-      <!-- ===== CONTACT CHANNELS ===== -->
+      <!-- ===== CONTACT FORM ===== -->
       <p class="eyebrow rv">Contact</p>
-      <h2 class="section-title rv"><span class="ja">お問い合わせ窓口</span><span class="en">How to Reach Us</span></h2>
-      <div class="support-grid">
-        <div class="support-card rv">
-          <p class="s-ico">✉️</p>
-          <h3><span class="ja">メール(全アプリ共通)</span><span class="en">Email (all apps)</span></h3>
-          <p>
-            <span class="ja">どのアプリのお問い合わせもこちらへ。アプリ名・端末機種・OSバージョンを添えていただくとスムーズです。</span>
-            <span class="en">For inquiries about any app. Including the app name, device model, and OS version helps us respond faster.</span>
-          </p>
-          <a class="s-link" href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a>
+      <h2 class="section-title rv"><span class="ja">お問い合わせフォーム</span><span class="en">Contact Form</span></h2>
+      <p class="section-lead rv">
+        <span class="ja">4つのアプリすべてのお問い合わせを、この窓口でお受けしています。下のフォームにご記入ください。お急ぎの場合や、スクリーンショットを添付したい場合は <a href="mailto:reach.app.support@gmail.com" style="color:var(--brand);">reach.app.support@gmail.com</a> まで直接どうぞ。</span>
+        <span class="en">One inbox handles inquiries for all four apps. Fill in the form below — or, if you're in a hurry or want to attach screenshots, email <a href="mailto:reach.app.support@gmail.com" style="color:var(--brand);">reach.app.support@gmail.com</a> directly.</span>
+      </p>
+
+      <form class="contact-form rv" id="contactForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-app">
+              <span class="ja">対象アプリ</span><span class="en">Which app</span>
+              <span class="req">Required</span>
+            </label>
+            <select id="f-app" name="app" required>
+              <option value="" disabled selected data-ja="選択してください" data-en="Please choose">選択してください</option>
+              <option value="yomi" data-ja="Descent of Yomi ― 黄泉降り" data-en="Descent of Yomi">Descent of Yomi ― 黄泉降り</option>
+              <option value="eldora" data-ja="惑星エルドラ" data-en="Planet Eldra">惑星エルドラ</option>
+              <option value="halfmoon" data-ja="HalfMoon Browser" data-en="HalfMoon Browser">HalfMoon Browser</option>
+              <option value="dake" data-ja="DAKE!" data-en="DAKE!">DAKE!</option>
+              <option value="other" data-ja="その他・サイト全般" data-en="Other / this website">その他・サイト全般</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-category">
+              <span class="ja">お問い合わせ種別</span><span class="en">Category</span>
+              <span class="req">Required</span>
+            </label>
+            <select id="f-category" name="category" required>
+              <option value="" disabled selected data-ja="選択してください" data-en="Please choose">選択してください</option>
+              <option value="bug" data-ja="不具合の報告" data-en="Bug report">不具合の報告</option>
+              <option value="feature" data-ja="機能のご要望" data-en="Feature request">機能のご要望</option>
+              <option value="purchase" data-ja="購入・課金について" data-en="Purchases &amp; billing">購入・課金について</option>
+              <option value="howto" data-ja="使い方のご質問" data-en="How do I…?">使い方のご質問</option>
+              <option value="feedback" data-ja="ご感想・応援" data-en="Feedback &amp; encouragement">ご感想・応援</option>
+              <option value="other" data-ja="その他" data-en="Something else">その他</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-name">
+              <span class="ja">お名前</span><span class="en">Name</span>
+              <span class="opt"><span class="ja">任意</span><span class="en">optional</span></span>
+            </label>
+            <input type="text" id="f-name" name="name" autocomplete="name" placeholder="R-each 太郎">
+          </div>
+
+          <div class="field">
+            <label for="f-email">
+              <span class="ja">返信先メールアドレス</span><span class="en">Your email</span>
+              <span class="req">Required</span>
+            </label>
+            <input type="email" id="f-email" name="email" autocomplete="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="field wide">
+            <label for="f-env">
+              <span class="ja">ご利用環境</span><span class="en">Your setup</span>
+              <span class="opt"><span class="ja">任意 — 不具合報告のときは、ぜひ</span><span class="en">optional — but please include it for bug reports</span></span>
+            </label>
+            <input type="text" id="f-env" name="env"
+                   data-ph-ja="iPhone 15 / iOS 18.5 / アプリ v1.2.2"
+                   data-ph-en="iPhone 15 / iOS 18.5 / app v1.2.2"
+                   placeholder="iPhone 15 / iOS 18.5 / アプリ v1.2.2">
+          </div>
+
+          <div class="field wide">
+            <label for="f-message">
+              <span class="ja">お問い合わせ内容</span><span class="en">Your message</span>
+              <span class="req">Required</span>
+            </label>
+            <textarea id="f-message" name="message" required
+                      data-ph-ja="不具合のご報告は、「何をしたら」「どうなったか」「本来どうなってほしかったか」の3点を書いていただけると、原因の特定がぐっと早くなります。"
+                      data-ph-en="For bug reports, telling us what you did, what happened, and what you expected instead makes diagnosis much faster."
+                      placeholder="不具合のご報告は、「何をしたら」「どうなったか」「本来どうなってほしかったか」の3点を書いていただけると、原因の特定がぐっと早くなります。"></textarea>
+          </div>
         </div>
-        <div class="support-card rv">
-          <p class="s-ico">🐛</p>
-          <h3><span class="ja">GitHub Issues(HalfMoon Browser)</span><span class="en">GitHub Issues (HalfMoon Browser)</span></h3>
-          <p>
-            <span class="ja">HalfMoon Browserの不具合報告・機能要望は、GitHub Issuesでも受け付けています。対応状況も公開されます。</span>
-            <span class="en">HalfMoon Browser bugs and feature requests are also tracked publicly on GitHub Issues.</span>
-          </p>
-          <a class="s-link" href="https://github.com/R-each0801/HalfMoonBrowser/issues" target="_blank" rel="noopener">github.com/R-each0801/HalfMoonBrowser/issues</a>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="formSubmit">
+            <span class="ja">この内容で送信</span><span class="en">Send this</span>
+          </button>
+          <button type="button" class="btn btn-ghost" id="formCopy">
+            <span class="ja">内容をコピー</span><span class="en">Copy instead</span>
+          </button>
         </div>
-        <div class="support-card rv">
-          <p class="s-ico">📚</p>
-          <h3><span class="ja">DAKE! 専用窓口</span><span class="en">DAKE! dedicated inbox</span></h3>
-          <p>
-            <span class="ja">DAKE!に関するお問い合わせは、専用アドレスもご利用いただけます。</span>
-            <span class="en">For DAKE!, you may also use its dedicated address.</span>
-          </p>
-          <a class="s-link" href="mailto:dake.app.feedback@gmail.com">dake.app.feedback@gmail.com</a>
-        </div>
-      </div>
+
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+        <p class="form-note">
+          <span class="ja">「この内容で送信」を押すと、記入内容をすべて差し込んだ状態でお使いのメールアプリが開きます。あとは送信ボタンを押すだけです。メールアプリが開かない環境では「内容をコピー」から本文をコピーして、<a href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a> 宛にお送りください。<br>いただいた内容は返信のためだけに使用し、第三者に提供することはありません。</span>
+          <span class="en">Pressing “Send this” opens your mail app with every field already filled in — all that's left is to hit send. If no mail app opens, use “Copy instead” and paste it into an email to <a href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a>.<br>Anything you send is used only to reply to you, and is never shared with third parties.</span>
+        </p>
+      </form>
+
+      <div style="height:70px;"></div>
 
       <!-- ===== FAQ ===== -->
       <p class="eyebrow rv">FAQ</p>
@@ -178,10 +244,31 @@
       <h3 id="yomi" style="font-size:17px;font-weight:700;margin:36px 0 16px;color:var(--c-yomi);scroll-margin-top:100px;">Descent of Yomi</h3>
 
       <details class="faq-item rv">
-        <summary><span class="ja">リリースはいつですか?</span><span class="en">When will it be released?</span></summary>
+        <summary><span class="ja">SteamとiOS、どちらで遊べますか?</span><span class="en">Steam or iOS — where can I play?</span></summary>
         <div class="faq-a">
-          <span class="ja">現在開発中で、Steamでの公開を予定しています。最新情報は<a href="apps/descent-of-yomi.html" style="color:var(--c-yomi);">作品ページ</a>でお知らせします。</span>
-          <span class="en">It's in development, headed for Steam. Updates will be posted on the <a href="apps/descent-of-yomi.html" style="color:var(--c-yomi);">game page</a>.</span>
+          <span class="ja">どちらでも遊べます。Steam版は買い切り(¥655)、iOS版は無料でお試しいただき、アプリ内課金「製品版購入」(¥600)で全編プレイできます。セーブデータは各プラットフォームで独立しており、引き継ぎには対応していません。</span>
+          <span class="en">Both. The Steam version is a one-time purchase (¥655); the iOS version is free to try, with a “Full Version” in-app purchase (¥600) unlocking the whole game. Saves are separate per platform and cannot be transferred.</span>
+        </div>
+      </details>
+      <details class="faq-item rv">
+        <summary><span class="ja">iOS版の製品版を購入したのに反映されません</span><span class="en">I bought the full version on iOS but it didn't unlock</span></summary>
+        <div class="faq-a">
+          <span class="ja">アプリ内の「購入を復元」をお試しください。購入時と同じApple IDでサインインしている必要があります。それでも解決しない場合は、購入日時とApple IDのメールアドレス(領収書に記載のもの)を添えてお問い合わせください。</span>
+          <span class="en">Try “Restore Purchases” in the app — you must be signed in with the same Apple ID used for the purchase. If that doesn't help, contact us with the purchase date and the Apple ID email shown on your receipt.</span>
+        </div>
+      </details>
+      <details class="faq-item rv">
+        <summary><span class="ja">難しすぎて先に進めません</span><span class="en">It's too hard — I can't get anywhere</span></summary>
+        <div class="faq-a">
+          <span class="ja">敗北は前提の設計です。気力を削り切ってから「致命」の札を通すのが基本の勝ち筋で、闇雲に攻撃するより「弾き」で受けを固める順番のほうが安定します。出自を変えると戦法そのものが変わるので、詰まったら別の出自もお試しください。</span>
+          <span class="en">Dying is part of the design. The core line is to grind stamina to zero and then land a Fatal card — building up Parry first is usually steadier than swinging freely. Each origin plays quite differently, so if you're stuck, try another one.</span>
+        </div>
+      </details>
+      <details class="faq-item rv">
+        <summary><span class="ja">セーブデータのバックアップはできますか?</span><span class="en">Can I back up my save data?</span></summary>
+        <div class="faq-a">
+          <span class="ja">セーブデータは各端末内に保存されます。iOS版はアプリを削除するとデータも失われますのでご注意ください。プラットフォーム間での引き継ぎには対応していません。</span>
+          <span class="en">Saves live on each device. On iOS, deleting the app erases them, so take care. Transferring saves between platforms is not supported.</span>
         </div>
       </details>
 
@@ -245,5 +332,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/contact.js"></script>
 </body>
 </html>
