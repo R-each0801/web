@@ -18,7 +18,7 @@
 (function () {
   "use strict";
 
-  var WEB3FORMS_KEY = "";
+  var WEB3FORMS_KEY = "2e6e314a-44c1-436e-af50-c909229a7ef1";
   var WEB3FORMS_URL = "https://api.web3forms.com/submit";
   var TO = "reach.app.support@gmail.com";
 
