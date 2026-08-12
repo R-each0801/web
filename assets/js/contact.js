@@ -1,18 +1,25 @@
 /* R-each contact form
  *
- * 送信方式の切り替え:
- *   FORM_ENDPOINT が空文字のあいだは「メーラー起動方式」で動作します。
- *   フォーム内容を整形した本文つきで、利用者のメールアプリが立ち上がります。
- *   （静的サイトのため、これが外部サービスなしで確実に届く唯一の方法です)
+ * ■ 送信方式の切り替え（ここだけ変えれば切り替わります）
  *
- *   Formspree / Web3Forms などの無料フォームサービスに登録して
- *   エンドポイントURLをここに貼ると、ページ内から直接送信されるようになります。
- *   例: var FORM_ENDPOINT = "https://formspree.io/f/xxxxxxxx";
+ *   WEB3FORMS_KEY が空 → 「メーラー起動方式」
+ *       記入内容を差し込んだ状態で、利用者のメールアプリが開きます。
+ *
+ *   WEB3FORMS_KEY にアクセスキーを入れる → 「ページ内から直接送信」
+ *       メールアプリを開かずに、そのまま reach.app.support@gmail.com へ届きます。
+ *
+ * ■ アクセスキーの取り方（無料・クレジットカード不要）
+ *   1. https://web3forms.com/ を開く
+ *   2. 「Create your Form」に reach.app.support@gmail.com を入力
+ *   3. 届いた確認メールのアクセスキー（英数字の文字列）を、下の "" の中に貼る
+ *
+ *   無料プランは月250通まで。それを超える見込みが出たら有料プランへ。
  */
 (function () {
   "use strict";
 
-  var FORM_ENDPOINT = "";
+  var WEB3FORMS_KEY = "";
+  var WEB3FORMS_URL = "https://api.web3forms.com/submit";
   var TO = "reach.app.support@gmail.com";
 
   var form = document.getElementById("contactForm");
@@ -28,7 +35,10 @@
 
   function val(name) {
     var el = form.elements[name];
-    return el ? el.value.trim() : "";
+    if (!el) return "";
+    /* チェックボックスの value は未チェックでも "on" を返すため、状態で判定する */
+    if (el.type === "checkbox") return el.checked ? el.value : "";
+    return el.value.trim();
   }
 
   /* option 要素の中身はテキストのみ有効なため、ラベルは data 属性で持たせている */
@@ -56,6 +66,15 @@
     attributes: true,
     attributeFilter: ["data-l"]
   });
+
+  /* 送信方式に応じて、フォーム下の説明文を出し分ける */
+  (function () {
+    var direct = !!WEB3FORMS_KEY;
+    var m = form.querySelector(".mode-mailto");
+    var dEl = form.querySelector(".mode-direct");
+    if (m) m.hidden = direct;
+    if (dEl) dEl.hidden = !direct;
+  })();
 
   function buildSubject() {
     return "[R-each] " + selectedLabel("app") + " / " + selectedLabel("category");
@@ -88,25 +107,29 @@
     var subject = buildSubject();
     var body = buildBody();
 
-    if (FORM_ENDPOINT) {
+    /* ページ内から直接送信（アクセスキーが設定されているとき） */
+    if (WEB3FORMS_KEY) {
       submitBtn.disabled = true;
       say("ok", ja ? "送信しています…" : "Sending…");
-      fetch(FORM_ENDPOINT, {
+      fetch(WEB3FORMS_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          app: selectedLabel("app"),
-          category: selectedLabel("category"),
-          name: val("name"),
+          access_key: WEB3FORMS_KEY,
+          subject: subject,
+          from_name: "R-each お問い合わせフォーム",
+          botcheck: val("botcheck"),
+          /* email を送ると返信先が自動でお客様のアドレスになる */
           email: val("email"),
-          env: val("env"),
-          message: val("message"),
-          _subject: subject
+          name: val("name"),
+          message: body
         })
       })
-        .then(function (res) {
-          if (!res.ok) throw new Error(res.status);
+        .then(function (res) { return res.json().catch(function () { return { success: res.ok }; }); })
+        .then(function (data) {
+          if (!data || !data.success) throw new Error("rejected");
           form.reset();
+          applyLang();
           say("ok", ja
             ? "送信しました。5営業日以内にご返信いたします。ありがとうございます。"
             : "Sent. We'll reply within five business days — thank you.");

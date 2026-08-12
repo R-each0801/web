@@ -132,6 +132,10 @@
           </div>
         </div>
 
+        <!-- スパムよけ（人間には見えない。ボットが埋めると弾かれる） -->
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
+               style="display:none !important;" aria-hidden="true">
+
         <div class="form-actions">
           <button type="submit" class="btn btn-primary" id="formSubmit">
             <span class="ja">この内容で送信</span><span class="en">Send this</span>
@@ -144,8 +148,16 @@
         <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
 
         <p class="form-note">
-          <span class="ja">「この内容で送信」を押すと、記入内容をすべて差し込んだ状態でお使いのメールアプリが開きます。あとは送信ボタンを押すだけです。メールアプリが開かない環境では「内容をコピー」から本文をコピーして、<a href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a> 宛にお送りください。<br>いただいた内容は返信のためだけに使用し、第三者に提供することはありません。</span>
-          <span class="en">Pressing “Send this” opens your mail app with every field already filled in — all that's left is to hit send. If no mail app opens, use “Copy instead” and paste it into an email to <a href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a>.<br>Anything you send is used only to reply to you, and is never shared with third parties.</span>
+          <span class="mode-mailto">
+            <span class="ja">「この内容で送信」を押すと、記入内容をすべて差し込んだ状態でお使いのメールアプリが開きます。あとは送信ボタンを押すだけです。メールアプリが開かない環境では「内容をコピー」から本文をコピーして、<a href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a> 宛にお送りください。<br></span>
+            <span class="en">Pressing “Send this” opens your mail app with every field already filled in — all that's left is to hit send. If no mail app opens, use “Copy instead” and paste it into an email to <a href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a>.<br></span>
+          </span>
+          <span class="mode-direct" hidden>
+            <span class="ja">「この内容で送信」を押すと、このページから直接送信されます。メールアプリは開きません。うまく送信できない場合は「内容をコピー」から本文をコピーして、<a href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a> 宛にお送りください。<br></span>
+            <span class="en">Pressing “Send this” submits straight from this page — no mail app involved. If it doesn't go through, use “Copy instead” and email it to <a href="mailto:reach.app.support@gmail.com">reach.app.support@gmail.com</a>.<br></span>
+          </span>
+          <span class="ja">いただいた内容は返信のためだけに使用し、第三者に提供することはありません。</span>
+          <span class="en">Anything you send is used only to reply to you, and is never shared with third parties.</span>
         </p>
       </form>
 
