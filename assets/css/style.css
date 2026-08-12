@@ -255,6 +255,11 @@ body.nav-open .nav-burger::after { transform: translateY(-5.5px) rotate(-45deg);
   border: 1px solid transparent;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
+  /* button 要素はブラウザ既定の背景色とフォントが効いてしまうため打ち消す */
+  background: transparent;
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: var(--acc); color: var(--acc-ink); }
