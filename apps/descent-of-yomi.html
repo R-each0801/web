@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Descent of Yomi ― 黄泉降り | R-each</title>
-<meta name="description" content="気力を削り、弾きで隙を作り、致命の一札を叩き込め。87体の妖怪、362枚の札、174種の神器、7つの出自。和風ローグライク・デッキ構築『Descent of Yomi ― 黄泉降り』公式ページ。Steam / App Storeで配信中。">
+<meta name="description" content="気力を削り、弾きで隙を作り、致命の一札を叩き込め。87体の妖怪、198種の札、193種の神器、7つの出自。和風ローグライク・デッキ構築『Descent of Yomi ― 黄泉降り』公式ページ。Steam / App Storeで配信中。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Descent of Yomi ― 黄泉降り | R-each">
-<meta property="og:description" content="87体の妖怪が待つ黄泉を、362枚の札と174種の神器で攻略する和風ローグライク・デッキ構築。Steam / App Storeで配信中。">
+<meta property="og:description" content="87体の妖怪が待つ黄泉を、198種の札と193種の神器で攻略する和風ローグライク・デッキ構築。Steam / App Storeで配信中。">
 <meta property="og:url" content="https://r-each0801.github.io/web/apps/descent-of-yomi.html">
 <meta property="og:image" content="https://r-each0801.github.io/web/assets/img/yomi/capsule_main.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -15,7 +15,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css?v=20260812c">
+<link rel="stylesheet" href="../assets/css/style.css?v=20260904a">
+<style>
+  /* 新キーアートは元々暗いので、ヒーローの暗転をこのページだけ緩める */
+  .p-yomi .app-hero-bg::after {
+    background: linear-gradient(180deg, rgba(11,12,16,.52) 0%, rgba(11,12,16,.32) 45%, var(--bg) 100%);
+  }
+</style>
 </head>
 <body class="p-yomi">
 
@@ -43,8 +49,8 @@
 
   <!-- ===== HERO ===== -->
   <section class="app-hero">
-    <div class="app-hero-bg" style="background-image:url('../assets/img/yomi/keyart.webp');background-position:center center;"></div>
-    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(11,12,16,.94) 0%, rgba(11,12,16,.82) 38%, rgba(11,12,16,.35) 68%, rgba(11,12,16,.15) 100%);"></div>
+    <div class="app-hero-bg" style="background-image:url('../assets/img/yomi/keyart.webp');background-position:center 42%;"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(11,12,16,.95) 0%, rgba(11,12,16,.80) 32%, rgba(11,12,16,.24) 62%, rgba(11,12,16,.02) 100%);"></div>
     <div class="wrap app-hero-inner">
       <img class="app-logo-img" src="../assets/img/yomi/logo.webp" alt="Descent of Yomi ― 黄泉降り">
       <p class="app-tagline">
@@ -52,8 +58,8 @@
         <span class="en">To the depths of Yomi, again and again.</span>
       </p>
       <p class="app-sub">
-        <span class="ja">気力を削り、弾きで隙を作り、致命の一札を叩き込め。87体の妖怪が待つ黄泉を、362枚の札と174種の神器で攻略する和風ローグライク・デッキ構築。7つの出自から戦法を選び、敗北を次の勝ち筋へ変えろ。</span>
-        <span class="en">Break stamina, parry the counterblow, and land a fatal card. Descend through Yomi in a Japanese folklore roguelike deckbuilder with 87 yokai, 362 cards, 174 artifacts, and 7 origins. Turn every death into your next winning line.</span>
+        <span class="ja">気力を削り、弾きで隙を作り、致命の一札を叩き込め。87体の妖怪が待つ黄泉を、198種の札と193種の神器で攻略する和風ローグライク・デッキ構築。7つの出自から戦法を選び、敗北を次の勝ち筋へ変えろ。</span>
+        <span class="en">Break stamina, parry the counterblow, and land a fatal card. Descend through Yomi in a Japanese folklore roguelike deckbuilder with 87 yokai, 198 cards, 193 artifacts and 7 origins. Turn every death into your next winning line.</span>
       </p>
       <div class="chips">
         <span class="tag status-live"><span class="ja">配信中</span><span class="en">Out now</span></span>
@@ -88,11 +94,11 @@
           <p class="lbl"><span class="ja">体の妖怪</span><span class="en">yokai</span></p>
         </div>
         <div class="about-chip" style="text-align:center;">
-          <p class="num" style="color:var(--c-yomi);">362</p>
-          <p class="lbl"><span class="ja">枚の札</span><span class="en">cards</span></p>
+          <p class="num" style="color:var(--c-yomi);">198</p>
+          <p class="lbl"><span class="ja">種の札</span><span class="en">cards</span></p>
         </div>
         <div class="about-chip" style="text-align:center;">
-          <p class="num" style="color:var(--c-yomi);">174</p>
+          <p class="num" style="color:var(--c-yomi);">193</p>
           <p class="lbl"><span class="ja">種の神器</span><span class="en">artifacts</span></p>
         </div>
         <div class="about-chip" style="text-align:center;">
@@ -108,12 +114,17 @@
     <div class="wrap">
       <p class="eyebrow rv">Trailer</p>
       <h2 class="section-title rv">
-        <span class="ja">最初の30秒で、空気がわかる。</span>
-        <span class="en">Thirty seconds says it all.</span>
+        <span class="ja">最初の40秒で、空気がわかる。</span>
+        <span class="en">Forty seconds says it all.</span>
       </h2>
-      <div class="video-frame rv">
+      <div class="video-frame rv ja">
         <video controls preload="none" poster="../assets/img/yomi/pv_poster.webp" playsinline>
           <source src="../assets/video/yomi_pv.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-frame rv en">
+        <video controls preload="none" poster="../assets/img/yomi/pv_poster_en.webp" playsinline>
+          <source src="../assets/video/yomi_pv_en.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -177,11 +188,12 @@
         <span class="en">A battlefield of ink and vermilion.</span>
       </h2>
       <div class="shot-row wide">
-        <figure class="shot rv"><img src="../assets/img/yomi/screen_01.webp" alt="Descent of Yomi スクリーンショット 1" loading="lazy"></figure>
-        <figure class="shot rv"><img src="../assets/img/yomi/screen_02.webp" alt="Descent of Yomi スクリーンショット 2" loading="lazy"></figure>
-        <figure class="shot rv"><img src="../assets/img/yomi/screen_03.webp" alt="Descent of Yomi スクリーンショット 3" loading="lazy"></figure>
-        <figure class="shot rv"><img src="../assets/img/yomi/screen_04.webp" alt="Descent of Yomi スクリーンショット 4" loading="lazy"></figure>
-        <figure class="shot rv"><img src="../assets/img/yomi/screen_05.webp" alt="Descent of Yomi スクリーンショット 5" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/screen_01.webp" width="1280" height="720" alt="夕暮れの鳥居で妖怪と斬り合う戦闘画面" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/screen_02.webp" width="1280" height="720" alt="月夜の橋で「ろくろ首」と対峙する戦闘画面" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/screen_03.webp" width="1280" height="720" alt="分岐した黄泉のマップと行先の選択画面" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/screen_04.webp" width="1280" height="720" alt="章の主「大百足」との親玉戦" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/screen_05.webp" width="1280" height="720" alt="戦闘後の勝利報酬で札を選ぶ画面" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/screen_06.webp" width="1280" height="720" alt="毒に侵された妖怪と戦う戦闘画面" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -242,14 +254,16 @@
         <span class="en">Every card, a brushstroke of war.</span>
       </h2>
       <p class="section-lead rv">
-        <span class="ja">攻撃、崩し、秘術 ― 100枚を超えるカードはすべて筆致のアートワークで描き下ろし。</span>
-        <span class="en">Attacks, breaks, secret arts — over a hundred cards, each drawn in brush-style artwork.</span>
+        <span class="ja">攻撃、崩し、秘術 ― 198種の札すべてに、墨の筆致で描き下ろしたアートワークを添えています。</span>
+        <span class="en">Attacks, breaks, secret arts — all 198 cards carry original artwork drawn in Japanese ink-wash style.</span>
       </p>
-      <div class="shot-row" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));max-width:880px;">
-        <figure class="shot rv"><img src="../assets/img/yomi/card_strike.webp" alt="カードアート: 斬撃" loading="lazy"></figure>
-        <figure class="shot rv"><img src="../assets/img/yomi/card_flash.webp" alt="カードアート: 一閃" loading="lazy"></figure>
-        <figure class="shot rv"><img src="../assets/img/yomi/card_arcmoon.webp" alt="カードアート: 弧月" loading="lazy"></figure>
-        <figure class="shot rv"><img src="../assets/img/yomi/card_spirit.webp" alt="カードアート: 闘気" loading="lazy"></figure>
+      <div class="shot-row" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:1000px;">
+        <figure class="shot rv"><img src="../assets/img/yomi/card_crescent.webp" width="500" height="332" alt="カードアート: 三日月" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/card_lionking.webp" width="500" height="332" alt="カードアート: 獅子王" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/card_thunder.webp" width="500" height="332" alt="カードアート: 照雷一閃" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/card_flame.webp" width="500" height="332" alt="カードアート: 炎帝" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/card_water.webp" width="500" height="332" alt="カードアート: 水面斬り" loading="lazy"></figure>
+        <figure class="shot rv"><img src="../assets/img/yomi/card_butterfly.webp" width="500" height="332" alt="カードアート: 胡蝶夢幻" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -270,6 +284,7 @@
         <tr><th><span class="ja">開発・販売</span><span class="en">Developer &amp; Publisher</span></th><td>R-each</td></tr>
         <tr><th>Steam</th><td><a href="https://store.steampowered.com/app/4785610/Descent_of_Yomi/" target="_blank" rel="noopener" style="color:var(--c-yomi);">store.steampowered.com/app/4785610</a></td></tr>
         <tr><th>App Store</th><td><a href="https://apps.apple.com/jp/app/descent-of-yomi/id6788629303" target="_blank" rel="noopener" style="color:var(--c-yomi);">apps.apple.com/jp/app/descent-of-yomi</a></td></tr>
+        <tr><th><span class="ja">メディアキット</span><span class="en">Press kit</span></th><td><a href="descent-of-yomi-presskit.html" style="color:var(--c-yomi);"><span class="ja">配信・記事向けの素材一式(ロゴ・スクリーンショット・トレーラー)</span><span class="en">Logos, screenshots and trailer for streams and articles</span></a></td></tr>
       </table>
     </div>
   </section>
@@ -289,6 +304,7 @@
       <div class="hero-cta rv">
         <a class="btn btn-primary" href="https://store.steampowered.com/app/4785610/Descent_of_Yomi/" target="_blank" rel="noopener"><span class="ja">Steamで購入</span><span class="en">Buy on Steam</span></a>
         <a class="btn btn-ghost" href="https://apps.apple.com/jp/app/descent-of-yomi/id6788629303" target="_blank" rel="noopener"><span class="ja">App Storeで入手</span><span class="en">Get on App Store</span></a>
+        <a class="btn btn-ghost" href="descent-of-yomi-presskit.html"><span class="ja">メディアキット</span><span class="en">Press Kit</span></a>
         <a class="btn btn-ghost" href="../support.html#yomi"><span class="ja">サポート</span><span class="en">Support</span></a>
       </div>
     </div>
@@ -318,6 +334,7 @@
       <div class="footer-col">
         <h4>Site</h4>
         <ul>
+          <li><a href="descent-of-yomi-presskit.html"><span class="ja">メディアキット</span><span class="en">Press Kit</span></a></li>
           <li><a href="../support.html"><span class="ja">サポート</span><span class="en">Support</span></a></li>
           <li><a href="../privacy.html"><span class="ja">プライバシーポリシー</span><span class="en">Privacy Policy</span></a></li>
           <li><a href="../terms.html"><span class="ja">利用規約</span><span class="en">Terms of Service</span></a></li>
@@ -332,6 +349,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js?v=20260812c"></script>
+<script src="../assets/js/main.js?v=20260904a"></script>
 </body>
 </html>
