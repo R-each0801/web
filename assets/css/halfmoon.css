@@ -1,0 +1,139 @@
+/* ============================================================
+   HalfMoon Browser ページ — 「余白 (Editorial White)」
+   App Store 画像 (A 案) と同じ紙の白・明朝・月光インディゴ。
+   サイト共通の style.css の色トークンをこのページだけ紙の白に置き換える。
+   ============================================================ */
+body.p-moon {
+  --bg: #F3F2EF;
+  --bg2: #ECEAE5;
+  --surface: #FFFFFF;
+  --surface2: #F7F6F3;
+  --line: rgba(30, 34, 48, 0.10);
+  --line2: rgba(30, 34, 48, 0.18);
+  --text: #1E2230;
+  --muted: #5C6170;
+  --faint: #8A8E99;
+  --c-moon: #2B3A67;
+  --acc: #2B3A67;
+  --acc-ink: #FFFFFF;
+  --hm-latin: "Cormorant Garamond", Georgia, serif;
+  --hm-mincho: "Shippori Mincho B1", "Shippori Mincho", "Hiragino Mincho ProN", serif;
+  background: var(--bg);
+  color: var(--text);
+}
+body.p-moon ::selection { background: rgba(43, 58, 103, 0.18); }
+body.p-moon .site-header.scrolled { background: rgba(243, 242, 239, 0.88); }
+@media (max-width: 720px) {
+  body.p-moon .site-nav { background: rgba(243, 242, 239, 0.98); }
+}
+
+/* ---- 共通の文字 ---- */
+.hm-label {
+  font-family: var(--hm-latin);
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: var(--faint);
+  text-transform: uppercase;
+}
+.hm-head {
+  font-family: var(--hm-mincho);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-wrap: balance;
+}
+.hm-head em { font-style: normal; color: var(--acc); }
+html[data-l="en"] .hm-head { font-family: var(--hm-latin); letter-spacing: 0; line-height: 1.12; }
+.hm-rule { width: 44px; height: 1px; background: var(--text); margin: 26px 0 22px; }
+.hm-body { color: var(--muted); line-height: 2; max-width: 34em; }
+
+/* ---- ボタン ---- */
+.hm-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.hm-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  height: 52px; padding: 0 26px; border-radius: 999px;
+  font-weight: 700; font-size: 15px; letter-spacing: 0.04em;
+  transition: transform .2s, background .2s, color .2s;
+}
+.hm-btn:hover { transform: translateY(-1px); }
+.hm-btn:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; }
+.hm-btn-primary { background: var(--acc); color: #fff; }
+.hm-btn-ghost { border: 1px solid var(--line2); color: var(--text); background: transparent; }
+.hm-btn-ghost:hover { background: var(--surface); }
+
+/* ---- ヒーロー ---- */
+.hm-hero { padding: 150px 0 90px; }
+.hm-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: center; }
+.hm-hero h1 { font-size: clamp(40px, 5.4vw, 66px); margin-top: 22px; }
+html[data-l="en"] .hm-hero h1 { font-size: clamp(44px, 6vw, 76px); }
+.hm-hero-meta { margin-top: 26px; font-size: 13px; color: var(--faint); letter-spacing: 0.06em; }
+.hm-hero-meta span + span::before { content: "・"; margin: 0 .5em; }
+.hm-hero-img img { width: 100%; height: auto; }
+/* 画像の紙色は WebP 変換で 1 段ずれるため、暗い方を採る合成でページの紙色に溶け込ませる (境目の四角を出さない) */
+.hm-hero-img img, .hm-feature-img img { mix-blend-mode: darken; }
+
+/* ---- 機能 (01〜07) ---- */
+.hm-features { padding: 40px 0 60px; }
+.hm-feature {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px; align-items: center;
+  padding: 70px 0; border-top: 1px solid var(--line);
+}
+.hm-feature:nth-child(even) .hm-feature-img { order: 2; }
+.hm-feature h2 { font-size: clamp(30px, 3.6vw, 42px); margin-top: 18px; }
+html[data-l="en"] .hm-feature h2 { font-size: clamp(34px, 4vw, 48px); }
+.hm-feature-img { display: flex; justify-content: center; }
+.hm-feature-img img { width: min(100%, 420px); height: auto; }
+.hm-points { margin-top: 22px; display: grid; gap: 10px; }
+.hm-points li { position: relative; padding-left: 22px; color: var(--muted); line-height: 1.8; font-size: 15px; }
+.hm-points li::before { content: ""; position: absolute; left: 0; top: .82em; width: 10px; height: 1px; background: var(--acc); }
+.hm-feature a.hm-inline { color: var(--acc); border-bottom: 1px solid currentColor; }
+
+/* ---- マニュアル ---- */
+.hm-manual { padding: 30px 0 100px; }
+.hm-manual-card {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 56px 60px;
+}
+.hm-manual-card h2 { font-size: clamp(28px, 3.2vw, 38px); margin-top: 16px; }
+.hm-manual-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.hm-manual-list a {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 15px 4px; border-bottom: 1px solid var(--line); color: var(--text); font-size: 15px;
+}
+.hm-manual-list a span:last-child { color: var(--faint); font-family: var(--hm-latin); font-size: 18px; }
+.hm-manual-list a:hover span:first-child { color: var(--acc); }
+
+/* ---- スクリーンショット ---- */
+.hm-gallery { padding: 90px 0; background: var(--bg2); }
+.hm-gallery-row { display: flex; gap: 18px; overflow-x: auto; padding: 34px 0 10px; scroll-snap-type: x mandatory; }
+.hm-gallery-row figure { flex: 0 0 auto; width: min(62vw, 240px); scroll-snap-align: start; }
+.hm-gallery-row img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 12px 30px rgba(30, 34, 48, 0.12); }
+
+/* ---- 製品情報 ---- */
+.hm-spec { padding: 100px 0; }
+.hm-spec table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+.hm-spec th, .hm-spec td { text-align: left; padding: 16px 4px; border-bottom: 1px solid var(--line); font-weight: 400; vertical-align: top; }
+.hm-spec th { width: 180px; color: var(--faint); font-size: 14px; }
+.hm-spec td a { color: var(--acc); border-bottom: 1px solid currentColor; word-break: break-all; }
+
+/* ---- 締め ---- */
+.hm-cta { padding: 110px 0 120px; border-top: 1px solid var(--line); text-align: center; }
+.hm-cta .hm-head { font-size: clamp(30px, 3.8vw, 46px); }
+.hm-cta .hm-btns { justify-content: center; }
+
+@media (max-width: 960px) {
+  .hm-hero { padding: 120px 0 60px; }
+  .hm-hero-grid, .hm-feature, .hm-manual-card { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .hm-feature:nth-child(even) .hm-feature-img { order: 0; }
+  .hm-feature { padding: 56px 0; }
+  .hm-manual-card { padding: 36px 26px; }
+}
+@media (max-width: 560px) {
+  .hm-spec th { width: 110px; }
+  .hm-btn { height: 48px; padding: 0 20px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hm-btn { transition: none; }
+}
