@@ -16,6 +16,7 @@
   --c-eldora: #d4a656;
   --c-moon: #8fb9e8;
   --c-dake: #ffd600;
+  --c-hoiq: #ff8ab8;
   --acc: var(--brand);
   --acc-ink: #0b0c10;
   --font-body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
@@ -124,6 +125,7 @@ html[data-l="en"] .ja { display: none !important; }
 .brand-logo em i:nth-child(2) { background: var(--c-eldora); }
 .brand-logo em i:nth-child(3) { background: var(--c-moon); }
 .brand-logo em i:nth-child(4) { background: var(--c-dake); }
+.brand-logo em i:nth-child(5) { background: var(--c-hoiq); }
 
 .site-nav { display: flex; align-items: center; gap: 30px; }
 .site-nav a {
@@ -362,6 +364,15 @@ body.nav-open .nav-burger::after { transform: translateY(-5.5px) rotate(-45deg);
 .work-card.t-eldora { --wa: var(--c-eldora); }
 .work-card.t-moon { --wa: var(--c-moon); }
 .work-card.t-dake { --wa: var(--c-dake); }
+.work-card.t-hoiq { --wa: var(--c-hoiq); }
+
+/* wide card: an odd last work spans both columns on desktop */
+@media (min-width: 961px) {
+  .work-card.wide { grid-column: 1 / -1; flex-direction: row; }
+  .work-card.wide .work-visual { flex: 0 0 calc(50% - 15px); }
+  .work-card.wide .work-body { justify-content: center; padding: 34px 40px; }
+  .work-card.wide .work-copy { flex: none; }
+}
 
 /* ---- about (top page) ---- */
 .about-grid {
@@ -721,6 +732,7 @@ body.nav-open .nav-burger::after { transform: translateY(-5.5px) rotate(-45deg);
 .legal-app.t-eldora { --acc: var(--c-eldora); }
 .legal-app.t-moon { --acc: var(--c-moon); }
 .legal-app.t-dake { --acc: var(--c-dake); }
+.legal-app.t-hoiq { --acc: var(--c-hoiq); }
 
 /* ---- support page ---- */
 .support-grid {
@@ -943,6 +955,8 @@ body.p-yomi { --acc: var(--c-yomi); --acc-ink: #fff; }
 body.p-eldora { --acc: var(--c-eldora); --acc-ink: #221a10; }
 body.p-moon { --acc: var(--c-moon); --acc-ink: #101826; }
 body.p-dake { --acc: var(--c-dake); --acc-ink: #17140a; }
+body.p-hoiq { --acc: var(--c-hoiq); --acc-ink: #2a1020; }
+.cell img.piyo { width: auto; height: 124px; margin: 2px auto 12px; border-radius: 0; }
 
 /* ---- responsive ---- */
 @media (max-width: 960px) {
